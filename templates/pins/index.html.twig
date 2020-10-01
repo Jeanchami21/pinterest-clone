@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PinsController!{% endblock %}
+
+{% block body %}
+<div class="container">
+<a href="{{ path('app_pins_create') }}"> Create Pin</a>
+    <div class="row justify-content-center">
+    
+        {% for pin in pins %}
+        <div class="col-md-3 col-sm-4 mt-2 mr-2">
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ pin.title}} </h5>
+                    <p class="card-text">{{ pin.description }} </p>
+                    <a href="{{ path('app_pin_show',{id: pin.id}) }} " class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block title %}Create Pin{% endblock %}
+{% block body %}
+
+<div class="container">
+<h1>Create Pin</h1>
+    <form method="POST">
+    <input type="hidden" name="_token" value="{{ csrf_token('pins_create') }}">
+        <div>
+            <label for="">Title</label><br>
+            <input type="text" id="title" name="title">
+        </div>
+        <div>
+            <label for="">Description</label><br>
+            <textarea name="description" id="description" cols="60" rows="5"></textarea>
+        </div>
+        <input type="submit" value="Create Pin">
+    </form>
+</div>
+
+{% endblock %}
